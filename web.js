@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
-  res.send("Let the battle begin!");
+  res.send("Let the battle begin! v2");
 });
 
 app.post("/", function (req, res) {
@@ -14,7 +14,7 @@ app.post("/", function (req, res) {
   //const moves = ["F", "T", "L", "R"];
   const moves = ["F", "L", "R"];
   if (checkHavePeopleToShot(data)) {
-    res.send(moves["T"]);
+    res.send("T");
   } else {
     res.send(moves[Math.floor(Math.random() * moves.length)]);
   }
