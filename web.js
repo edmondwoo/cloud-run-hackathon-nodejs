@@ -5,16 +5,16 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
-  res.send("Let the battle begin! v2");
+  res.send("Let the battle begin! v3");
 });
 
 app.post("/", function (req, res) {
   console.log(req.body);
   const data = req.body;
-  //const moves = ["F", "T", "L", "R"];
-  const moves = ["F", "L", "R"];
+  const moves = ["F", "T", "L", "R"];
+  //const moves = ["F", "L", "R"];
   if (checkHavePeopleToShot(data)) {
-    res.send("T");
+    res.send(moves[1]);
   } else {
     res.send(moves[Math.floor(Math.random() * moves.length)]);
   }
